@@ -16,3 +16,6 @@ public interface ComunicacaoConverter {
 
 
 }
+
+
+//PR para ajuste do Java with Maven
