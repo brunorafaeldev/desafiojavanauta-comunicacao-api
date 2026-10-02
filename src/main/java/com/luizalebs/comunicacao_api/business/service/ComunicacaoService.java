@@ -1,8 +1,8 @@
 package com.luizalebs.comunicacao_api.business.service;
 
+import com.luizalebs.comunicacao_api.business.converter.mapper.ComunicacaoConverter;
 import com.luizalebs.comunicacao_api.business.dto.ComunicacaoInDTO;
 import com.luizalebs.comunicacao_api.business.dto.ComunicacaoOutDTO;
-import com.luizalebs.comunicacao_api.business.converter.ComunicacaoConverter;
 import com.luizalebs.comunicacao_api.infraestructure.entities.ComunicacaoEntity;
 import com.luizalebs.comunicacao_api.infraestructure.enums.StatusEnvioEnum;
 import com.luizalebs.comunicacao_api.infraestructure.repositories.ComunicacaoRepository;
@@ -26,9 +26,9 @@ public class ComunicacaoService {
             throw new RuntimeException();
         }
         dto.setStatusEnvio(StatusEnvioEnum.PENDENTE);
-        ComunicacaoEntity entity = converter.paraEntity(dto);
+        ComunicacaoEntity entity = converter.paraComunicacaoEntity(dto);
         repository.save(entity);
-        ComunicacaoOutDTO outDTO = converter.paraDTO(entity);
+        ComunicacaoOutDTO outDTO = converter.paraComunicacaoDTO(entity);
         return outDTO;
     }
 
@@ -37,7 +37,7 @@ public class ComunicacaoService {
         if (Objects.isNull(entity)) {
             throw new RuntimeException();
         }
-        return converter.paraDTO(entity);
+        return converter.paraComunicacaoDTO(entity);
     }
 
     public ComunicacaoOutDTO alterarStatusComunicacao(String emailDestinatario) {
@@ -47,7 +47,7 @@ public class ComunicacaoService {
         }
         entity.setStatusEnvio(StatusEnvioEnum.CANCELADO);
         repository.save(entity);
-        return (converter.paraDTO(entity));
+        return (converter.paraComunicacaoDTO(entity));
     }
 
 }

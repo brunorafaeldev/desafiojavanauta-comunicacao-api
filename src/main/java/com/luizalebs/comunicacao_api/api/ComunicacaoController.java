@@ -3,7 +3,6 @@ package com.luizalebs.comunicacao_api.api;
 import com.luizalebs.comunicacao_api.business.dto.ComunicacaoInDTO;
 import com.luizalebs.comunicacao_api.business.dto.ComunicacaoOutDTO;
 import com.luizalebs.comunicacao_api.business.service.ComunicacaoService;
-import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
