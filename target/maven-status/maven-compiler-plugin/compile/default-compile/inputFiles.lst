@@ -1,0 +1,10 @@
+C:\Projetos\fullstack-javanauta\comunicacao_api\src\main\java\com\luizalebs\comunicacao_api\business\service\ComunicacaoService.java
+C:\Projetos\fullstack-javanauta\comunicacao_api\src\main\java\com\luizalebs\comunicacao_api\infraestructure\repositories\ComunicacaoRepository.java
+C:\Projetos\fullstack-javanauta\comunicacao_api\src\main\java\com\luizalebs\comunicacao_api\api\ComunicacaoController.java
+C:\Projetos\fullstack-javanauta\comunicacao_api\src\main\java\com\luizalebs\comunicacao_api\infraestructure\entities\ComunicacaoEntity.java
+C:\Projetos\fullstack-javanauta\comunicacao_api\src\main\java\com\luizalebs\comunicacao_api\infraestructure\enums\ModoEnvioEnum.java
+C:\Projetos\fullstack-javanauta\comunicacao_api\src\main\java\com\luizalebs\comunicacao_api\infraestructure\enums\StatusEnvioEnum.java
+C:\Projetos\fullstack-javanauta\comunicacao_api\src\main\java\com\luizalebs\comunicacao_api\business\converter\mapper\ComunicacaoConverter.java
+C:\Projetos\fullstack-javanauta\comunicacao_api\src\main\java\com\luizalebs\comunicacao_api\business\dto\ComunicacaoInDTO.java
+C:\Projetos\fullstack-javanauta\comunicacao_api\src\main\java\com\luizalebs\comunicacao_api\business\dto\ComunicacaoOutDTO.java
+C:\Projetos\fullstack-javanauta\comunicacao_api\src\main\java\com\luizalebs\comunicacao_api\ComunicacaoApiApplication.java

@@ -11,7 +11,7 @@ import org.mapstruct.Mapping;
 public interface ComunicacaoConverter {
 
     @Mapping(source = "id", target = "id")
-    ComunicacaoEntity paraComunicacaoEntity(ComunicacaoInDTO comunicacaoIndDTO);
+    ComunicacaoEntity paraComunicacaoEntity(ComunicacaoInDTO comunicacaoInDTO);
     ComunicacaoOutDTO paraComunicacaoDTO(ComunicacaoEntity comunicacaoEntity);
 
 
