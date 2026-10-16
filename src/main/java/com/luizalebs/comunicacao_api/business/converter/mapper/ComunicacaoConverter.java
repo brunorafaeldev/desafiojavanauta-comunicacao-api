@@ -10,7 +10,7 @@ import org.mapstruct.Mapping;
 @Mapper (componentModel = "spring")
 public interface ComunicacaoConverter {
 
-    @Mapping(source = "id", target = "id")
+
     ComunicacaoEntity paraComunicacaoEntity(ComunicacaoInDTO comunicacaoInDTO);
     ComunicacaoOutDTO paraComunicacaoDTO(ComunicacaoEntity comunicacaoEntity);
 
@@ -18,4 +18,3 @@ public interface ComunicacaoConverter {
 }
 
 
-//PR para ajuste do Java with Maven
