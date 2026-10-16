@@ -7,7 +7,8 @@ import lombok.*;
 
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
+
 
 @Getter
 @Setter
@@ -24,7 +25,7 @@ public class ComunicacaoEntity implements Serializable {
     private Long id;
 
     @Column(name = "HORA_ENVIO", nullable = false)
-    private Date dataHoraEnvio;
+    private LocalDateTime dataHoraEnvio;
 
     @Column(name = "NOME_DESTINATARIO", nullable = false)
     private String nomeDestinatario;
@@ -32,7 +33,7 @@ public class ComunicacaoEntity implements Serializable {
     @Column(name = "EMAIL_DESTINATARIO", nullable = false, unique = true)
     private String emailDestinatario;
 
-    @Column(name = "TELEFONE_DESTINATARIO")
+    @Column(name = "TELEFONE_DESTINATARIO", nullable = false)
     private String telefoneDestinatario;
 
     @Column(name = "MENSAGEM", nullable = false)
