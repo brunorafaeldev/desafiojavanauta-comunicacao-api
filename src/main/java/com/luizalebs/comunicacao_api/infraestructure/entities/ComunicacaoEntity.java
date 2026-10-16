@@ -2,11 +2,13 @@ package com.luizalebs.comunicacao_api.infraestructure.entities;
 
 import com.luizalebs.comunicacao_api.infraestructure.enums.ModoEnvioEnum;
 import com.luizalebs.comunicacao_api.infraestructure.enums.StatusEnvioEnum;
+import jakarta.persistence.*;
 import lombok.*;
 
-import javax.persistence.*;
+
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
+
 
 @Getter
 @Setter
@@ -23,7 +25,7 @@ public class ComunicacaoEntity implements Serializable {
     private Long id;
 
     @Column(name = "HORA_ENVIO", nullable = false)
-    private Date dataHoraenvio;
+    private LocalDateTime dataHoraEnvio;
 
     @Column(name = "NOME_DESTINATARIO", nullable = false)
     private String nomeDestinatario;
@@ -31,7 +33,7 @@ public class ComunicacaoEntity implements Serializable {
     @Column(name = "EMAIL_DESTINATARIO", nullable = false, unique = true)
     private String emailDestinatario;
 
-    @Column(name = "TELEFONE_DESTINATARIO")
+    @Column(name = "TELEFONE_DESTINATARIO", nullable = false)
     private String telefoneDestinatario;
 
     @Column(name = "MENSAGEM", nullable = false)
