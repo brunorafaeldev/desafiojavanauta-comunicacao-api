@@ -38,12 +38,13 @@ public class ComunicacaoController {
         return ResponseEntity.ok(service.buscarStatusComunicacao(emailDestinatario));
     }
 
+    @PatchMapping("/alterar")
     @Operation(summary = "Altera status comunicado", description = "Altera status comunicado para CANCELADO")
     @ApiResponse(responseCode = "200", description = "Status mudou para CANCELADO")
     @ApiResponse(responseCode = "404", description = "Comunicado não encontrado por e-mail do destinatário" )
     @ApiResponse(responseCode = "400", description = "Bad request")
     @ApiResponse(responseCode = "500", description = "Erro de servidor")
-    @PatchMapping("/alterar")
+
     public ResponseEntity<ComunicacaoOutDTO> cancelarStatusComunicado(@Valid @RequestParam String emailDestinatario) {
         return ResponseEntity.ok(service.alterarStatusComunicacao(emailDestinatario));
     }
