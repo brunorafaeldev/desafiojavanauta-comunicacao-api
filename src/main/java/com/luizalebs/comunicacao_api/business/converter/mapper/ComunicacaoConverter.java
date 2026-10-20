@@ -5,7 +5,9 @@ import com.luizalebs.comunicacao_api.business.dto.ComunicacaoInDTO;
 import com.luizalebs.comunicacao_api.business.dto.ComunicacaoOutDTO;
 import com.luizalebs.comunicacao_api.infraestructure.entities.ComunicacaoEntity;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
+
+import java.util.List;
+
 
 @Mapper (componentModel = "spring")
 public interface ComunicacaoConverter {
@@ -13,6 +15,8 @@ public interface ComunicacaoConverter {
 
     ComunicacaoEntity paraComunicacaoEntity(ComunicacaoInDTO comunicacaoInDTO);
     ComunicacaoOutDTO paraComunicacaoDTO(ComunicacaoEntity comunicacaoEntity);
+
+    List<ComunicacaoOutDTO> paraListaComunicacaoOutDTO(List<ComunicacaoEntity> comunicacaoEntity);
 
 
 }
