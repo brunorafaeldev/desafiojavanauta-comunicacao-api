@@ -9,13 +9,12 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.ErrorResponse;
-import org.springframework.web.bind.annotation.ControllerAdvice;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 
 @ControllerAdvice
+@RestControllerAdvice
 public class GlobalExceptionHandler {
 
 
@@ -52,6 +51,16 @@ public class GlobalExceptionHandler {
         ));
     }
 
+    @ExceptionHandler(UnsupportedOperationException.class)
+    public ResponseEntity<ErrorResponseDTO> handlerUnsupportedOperationException (UnsupportedOperationException ex,
+                                                                                  HttpServletRequest request) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(buildError(HttpStatus.BAD_REQUEST.value(),
+                ex.getMessage(),
+                request.getRequestURI(),
+                "Bad Request"
+
+        ));
+    }
 
 
     private ErrorResponseDTO buildError(int status, String messagem, String path, String error) {

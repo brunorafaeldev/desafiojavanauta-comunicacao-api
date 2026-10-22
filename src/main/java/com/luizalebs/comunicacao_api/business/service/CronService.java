@@ -26,7 +26,7 @@ public class CronService {
 
     public void buscaProcessaComunicadosAgendados() {
 
-        log.info("Buscando comunicações pendentes . . .");
+        log.info("Buscando comunicações pendentes...");
 
         LocalDateTime dataHoraAtual = LocalDateTime.now();
 
