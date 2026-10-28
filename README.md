@@ -17,6 +17,11 @@ Cada comunicado possui os seguintes campos:
 
 ---
 
+## ⚠️ **Aviso:** No momento, o campo `modoEnvio` aceita **apenas** o valor `"EMAIL"`. 
+Os valores `SMS`, `PUSH` e `WHATSAPP` serão implementados futuramente.
+
+---
+
 ## 🚀 Endpoints da Aplicação
 
 * **GET**: localhost:8087/comunicacao: Busca status comunicado passando e-mail
