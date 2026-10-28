@@ -23,7 +23,7 @@ public class  ComunicacaoInDTO implements Serializable {
 
     private Long id;
 
-    @NotNull (message = "A data e hora do envio são obrigatórios")
+
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
     private LocalDateTime dataHoraEnvio;
     @NotBlank (message = "O nome do destinatário é obrigatório")
@@ -34,7 +34,6 @@ public class  ComunicacaoInDTO implements Serializable {
     private String telefoneDestinatario;
     @NotBlank(message = "A mensagem é obrigatória")
     private String mensagem;
-    @NotNull(message = "O modo de envio é obrigatório")
     private ModoEnvioEnum modoDeEnvio;
     @JsonIgnore
     private StatusEnvioEnum statusEnvio;

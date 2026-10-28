@@ -4,6 +4,7 @@ import com.luizalebs.comunicacao_api.infraestructure.enums.ModoEnvioEnum;
 import com.luizalebs.comunicacao_api.infraestructure.enums.StatusEnvioEnum;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 
 import java.io.Serializable;
@@ -23,6 +24,7 @@ public class ComunicacaoEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
 
     @Column(name = "HORA_ENVIO", nullable = false)
     private LocalDateTime dataHoraEnvio;
