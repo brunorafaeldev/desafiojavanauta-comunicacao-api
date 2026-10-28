@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+  notificacao:
+    build: ..\javanauta-notificacao
+    container_name: notificacao
+    ports:
+      - "8082:8082"
+    restart: always
+
+  comunicacao_api:
+    build: .
+    container_name: comunicacao-api
+    ports:
+      - "8087:8087"
+    environment:
+      - NOTIFICACAO_URL=http://notificacao:8082/email
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/comunicacao_api
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=accessdatabase
+    depends_on:
+      - postgres
+      - notificacao
+    restart: always
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: accessdatabase
+      POSTGRES_DB: comunicacao_api
+    ports:
+      - "5433:5432"
+
+networks:
+  default:
+    driver: bridge
